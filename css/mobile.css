@@ -33,6 +33,16 @@ Typography
 Layout
 =================================================================*/
 
+/*--App Holder--*/
+
+.app-holder__sidebar__menu-item {
+    padding: var(--su-l);
+}
+
+.app-holder__sidebar__menu.ctnr-grid {
+    max-height: 0;
+}
+
 /*--Wrapper--*/
 
 .wrapper {
@@ -58,6 +68,10 @@ Layout
 }
 
 .pad--xxxl.mobile-pad--l {
+    padding: var(--su-xxl) var(--su-l);
+}
+
+.pad--xxl.mobile-pad--xxl-l {
     padding: var(--su-xxl) var(--su-l);
 }
 
@@ -119,4 +133,10 @@ Layout
 
 .overlay__ctnr__content.cols--thirds {
     grid-template-columns: 1fr;
+}
+
+/*--Speechy Widget--*/
+
+.speechy-widget__footer__voice p {
+    display: none;
 }

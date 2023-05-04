@@ -30,6 +30,28 @@ Typography
 Layout
 =================================================================*/
 
+/*--App Holder--*/
+
+.app-holder {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+}
+
+.app-holder, .app-holder__sidebar, .app-holder__content {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.app-holder__sidebar__menu, .app-holder__sidebar__menu.ctnr-grid {
+    height: 100%;
+    grid-template-rows: 1fr auto;
+}
+
+.app-holder__sidebar__menu-item {
+    padding: var(--su-l) var(--su-xxl);
+}
+
 /*--Wrapper--*/
 
 .wrapper {
@@ -79,3 +101,5 @@ Layout
 /*--Header--*/
 
 .logo--mobile { display: none; }
+
+.toggle-menu { display: none; }

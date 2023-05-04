@@ -33,6 +33,16 @@ Typography
 Layout
 =================================================================*/
 
+/*--App Holder--*/
+
+.app-holder__sidebar__menu-item {
+    padding: var(--su-l) var(--su-xxl);
+}
+
+.app-holder__sidebar__menu.ctnr-grid {
+    max-height: 0;
+}
+
 /*--Wrapper--*/
 
 .wrapper {
@@ -50,6 +60,12 @@ Layout
     --su-xxxl: 100px;
     --su-xxxxl: 150px;
 }
+
+/*--Paddings--*/
+
+.pad--xxl.tablet-pad--l-xxl {
+    padding: var(--su-l) var(--su-xxl);
+} 
 
 /*--Columns--*/
 
