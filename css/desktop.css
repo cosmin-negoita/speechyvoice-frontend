@@ -1,0 +1,81 @@
+/*/////////////////////////////////////////////////////////////////
+
+SpeechyVoice
+Desktop
+
+/////////////////////////////////////////////////////////////////*/
+
+/*=================================================================
+Typography
+=================================================================*/
+
+.txt--title {
+    font-size: 48px;
+    line-height: 58px;
+}
+.txt--subtitle, .txt--body-big {
+    font-size: 22px;
+    line-height: 34px;
+}
+.txt--body {
+    font-size: 16px;
+    line-height: 26px;
+}
+.txt--label {
+    font-size: 12px;
+    line-height: 26px;
+}
+
+/*=================================================================
+Layout
+=================================================================*/
+
+/*--Wrapper--*/
+
+.wrapper {
+    padding: 0 var(--su-xxl);
+}
+
+/*--Sizing Units--*/
+
+:root {
+    --su-s: 5px;
+    --su-m: 10px;
+    --su-l: 20px;
+    --su-xl: 30px;
+    --su-xxl: 50px;
+    --su-xxxl: 100px;
+    --su-xxxxl: 150px;
+}
+
+/*--Columns--*/
+
+.cols--halves {
+    grid-template-columns: 1fr 1fr;
+}
+
+.cols--thirds {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cols--fourths {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/*--Overlay--*/
+
+.overlay__ctnr__holder {
+    padding: var(--su-xxl);
+}
+
+.overlay__header {
+    grid-template-columns: 1fr max-content;
+}
+
+.overlay__ctnr__content {
+    padding-bottom: vaR(--su-xxl);
+}
+
+/*--Header--*/
+
+.logo--mobile { display: none; }
