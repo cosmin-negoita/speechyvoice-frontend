@@ -426,6 +426,11 @@ Styles
     transition: transform 0.25s ease-in, opacity 0.25s ease-in;
 }
 
+.overlay__header {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .overlay .close {
     position: absolute;
     top: var(--su-m);
@@ -963,7 +968,7 @@ Responsive Styles
         box-shadow: none;
     }
 
-    .cols--max-full {
+    .cols--max-full {   
         grid-template-columns: 1fr;
     }
 

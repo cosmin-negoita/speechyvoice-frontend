@@ -12,9 +12,13 @@
     <div class="overlay">
         <div class="overlay__ctnr card-stack">
             <div class="overlay__ctnr__holder ctnr-grid card card--white">
-                <div class="overlay__header padb--xxl">
+                <div class="overlay__header padb--xxl gap--l">
                     <h2 class="txt txt--title txt--align-center">Choose voice</h2>
                     <button class="close btn btn--secondary-dark btn--icon" onclick="toggleOverlay()"><img src="assets/icon-cross.svg" alt="" /></button>
+                    <div class="tabs card--white">
+                        <button class="tabs__item tabs__item--active txt txt--body">All Voices</button>
+                        <button class="tabs__item txt txt--body">Favorite</button>
+                    </div>
                 </div>
                 <div class="overlay__ctnr__content ctnr-grid gap--l cols--thirds">
                     <div class="card card--outline card--outline-hover card--outline-highlight ctnr-grid pad--xl justify-center gap--m">
@@ -41,7 +45,15 @@
                             <button class="btn btn--secondary-dark btn--icon btn--small"><img src="assets/icon-heart-dark.svg" alt="" /></button>
                         </div>
                     </div>
-                    <div class="card card--outline card--outline-hover card--outline-highlight ctnr-grid pad--xl justify-center gap--m">
+                    <div class="card card--outline card--outline-hover ctnr-grid pad--xl justify-center gap--m">
+                        <img src="assets/alex.jpg" class="circle-avatar" alt="Alex">
+                        <h3 class="txt txt--body-big">Alex</h3>
+                        <div class="ctnr-flex gap--m">
+                            <button class="btn btn--icon btn--small"><img src="assets/icon-play-white.svg" alt="" /></button>
+                            <button class="btn btn--secondary-dark btn--icon btn--small"><img src="assets/icon-heart-dark.svg" alt="" /></button>
+                        </div>
+                    </div>
+                    <div class="card card--outline card--outline-hover ctnr-grid pad--xl justify-center gap--m">
                         <img src="assets/alex.jpg" class="circle-avatar" alt="Alex">
                         <h3 class="txt txt--body-big">Alex</h3>
                         <div class="ctnr-flex gap--m">
@@ -65,14 +77,6 @@
                             <button class="btn btn--secondary-dark btn--icon btn--small"><img src="assets/icon-heart-dark.svg" alt="" /></button>
                         </div>
                     </div>
-                    <div class="card card--outline card--outline-hover card--outline-highlight ctnr-grid pad--xl justify-center gap--m">
-                        <img src="assets/alex.jpg" class="circle-avatar" alt="Alex">
-                        <h3 class="txt txt--body-big">Alex</h3>
-                        <div class="ctnr-flex gap--m">
-                            <button class="btn btn--icon btn--small"><img src="assets/icon-play-white.svg" alt="" /></button>
-                            <button class="btn btn--secondary-dark btn--icon btn--small"><img src="assets/icon-heart-dark.svg" alt="" /></button>
-                        </div>
-                    </div>
                     <div class="card card--outline card--outline-hover ctnr-grid pad--xl justify-center gap--m">
                         <img src="assets/alex.jpg" class="circle-avatar" alt="Alex">
                         <h3 class="txt txt--body-big">Alex</h3>
@@ -89,7 +93,7 @@
                             <button class="btn btn--secondary-dark btn--icon btn--small"><img src="assets/icon-heart-dark.svg" alt="" /></button>
                         </div>
                     </div>
-                    <div class="card card--outline card--outline-hover card--outline-highlight ctnr-grid pad--xl justify-center gap--m">
+                    <div class="card card--outline card--outline-hover ctnr-grid pad--xl justify-center gap--m">
                         <img src="assets/alex.jpg" class="circle-avatar" alt="Alex">
                         <h3 class="txt txt--body-big">Alex</h3>
                         <div class="ctnr-flex gap--m">
@@ -260,6 +264,18 @@
         </div>
     </div>
     <script type="text/javascript">
+
+        const tabs = document.querySelectorAll('.tabs__item');
+        Array.from(tabs).forEach(tab => {
+            tab.addEventListener('click', () => {
+                if (!tab.classList.contains('tabs__item--active')) {
+                    Array.from(tabs).forEach(item => {
+                        item.classList.remove('tabs__item--active');
+                    });
+                    tab.classList.toggle('tabs__item--active');
+                }
+            });
+        });
 
         const toggleMenu = () => {
             const menu = document.querySelector('.app-holder__sidebar__menu');
