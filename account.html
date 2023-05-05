@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/wyo3zlu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Account | SpeechyVoice</title>
+</head>
+<body class="bg-glow--dark">
+    <div class="app-holder">
+        <div class="app-holder__sidebar ctnr-grid">
+            <div class="ctnr-grid cols--full-max align-center pad--xxl tablet-pad--l-xxl mobile-pad--l">
+                <div class="logo-ctnr">
+                    <a href="" class="logo logo--desktop"><img src="assets/logo.svg" /></a>
+                    <a href="" class="logo logo--mobile"><img src="assets/logo-mobile.svg" /></a>
+                </div>
+                <button class="toggle-menu btn btn--secondary-white txt txt--body txt--white" onclick="toggleMenu()">Menu</button>
+            </div>
+            <div class="app-holder__sidebar__menu ctnr-grid">
+                <div class="ctnr-grid">
+                    <a href="studio.html" class="app-holder__sidebar__menu-item">
+                        <img src="assets/icon-audio.svg" alt="" />
+                        <p class="txt txt--body-big txt--white">Studio</p>
+                    </a>
+                    <a href="account.html" class="app-holder__sidebar__menu-item app-holder__sidebar__menu-item--active">
+                        <img src="assets/icon-user.svg" alt="" />
+                        <p class="txt txt--body-big txt--white">Account</p>
+                    </a>
+                    <a href="billing.html" class="app-holder__sidebar__menu-item">
+                        <img src="assets/icon-card.svg" alt="" />
+                        <p class="txt txt--body-big txt--white">Billing</p>
+                    </a>
+                    <a href="support.html" class="app-holder__sidebar__menu-item">
+                        <img src="assets/icon-support.svg" alt="" />
+                        <p class="txt txt--body-big txt--white">Support</p>
+                    </a>
+                </div>
+                <div class="ctnr-grid pad--xxl mobile-pad--l gap--l">
+                    <div class="ctnr-grid cols--full-max align-center">
+                        <div class="ctnr-grid">
+                            <p class="txt txt--label txt--white">Active Plan</p>
+                            <p class="txt txt--body txt--white">Free Trial</p>
+                        </div>
+                        <a href="pricing.html" class="btn txt txt--body">Upgrade</a>
+                    </div>
+                    <div class="divider divider--white"></div>
+                    <div class="ctnr-grid cols--full-max align-center">
+                        <div class="ctnr-grid">
+                            <p class="txt txt--label txt--white">Character Usage</p>
+                            <p class="txt txt--body txt--white"><strong>854</strong> / 10,000</p>
+                        </div>
+                        <a href="buychars.html" class="btn btn--secondary-white txt txt--body">Buy</a>
+                    </div>
+                    <div class="progress-bar card--white-transparent"><div class="progress-bar__loaded bg-gradient--brand" style="width: 100px"></div></div>
+                    <a href="login.html" class="btn btn--secondary-white txt txt--body">Sign out</a>
+                </div>
+            </div>
+        </div>
+        <div class="app-holder__content pad--xxl mobile-pad--xxl-l">
+            <div class="ctnr-grid gap--xxl">
+                <div class="ctnr-flex gap--l align-center">
+                    <h2 class="txt txt--title txt--white">Account</h2>
+                </div>
+                <div class="ctnr-grid cols--halves cols--halves-break-1280 gap--l">
+                    <div class="ctnr-grid card card--white-transparent pad--xxl mobile-pad--xxl-l gap--xl">
+                        <h3 class="txt txt--subtitle txt--white">Information</h3>
+                        <div class="ctnr-flex gap--m align-center">
+                            <div class="icon-circle card--white-transparent"><img src="assets/icon-email.svg" alt=""></div>
+                            <div>
+                                <p class="txt txt--body txt--white"><strong>Your Email</strong></p>
+                                <p class="txt txt--body-big txt--white">hello@intud.io</p>
+                            </div>
+                        </div>
+                        <div class="divider divider--white"></div>
+                        <div class="ctnr-flex gap--m align-center">
+                            <div class="icon-circle card--white-transparent"><img src="assets/icon-calendar.svg" alt=""></div>
+                            <div>
+                                <p class="txt txt--body txt--white"><strong>Characters Reset</strong></p>
+                                <p class="txt txt--body-big txt--white">May 30, 2023</p>
+                            </div>
+                        </div>
+                        <div class="divider divider--white"></div>
+                        <div class="ctnr-flex gap--m align-center">
+                            <div class="icon-circle card--white-transparent"><img src="assets/icon-gauge.svg" alt=""></div>
+                            <div>
+                                <p class="txt txt--body txt--white"><strong>Remaining Characters</strong></p>
+                                <p class="txt txt--body-big txt--white">9,146</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ctnr-grid card card--white-transparent pad--xxl mobile-pad--xxl-l gap--xl">
+                        <h3 class="txt txt--subtitle txt--white">Change Password</h3>
+                        <div class="ctnr-grid gap--m">
+                            <label class="form-field card card--white card--white-hover pad--l">
+                                <p class="txt txt--label"><strong>Current Password</strong></p>
+                                <input id="phone" class="form-field__input txt txt--body" placeholder="Type here..." type="text" />
+                            </label>
+                            <label class="form-field card card--white card--white-hover pad--l">
+                                <p class="txt txt--label"><strong>New Password</strong></p>
+                                <input id="phone" class="form-field__input txt txt--body" placeholder="Type here..." type="text" />
+                            </label>
+                            <label class="form-field card card--white card--white-hover pad--l">
+                                <p class="txt txt--label"><strong>Confirm New Password</strong></p>
+                                <input id="phone" class="form-field__input txt txt--body" placeholder="Type here..." type="text" />
+                            </label>
+                        </div>
+                        <a href="" class="btn txt txt--body">Change password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        const toggleMenu = () => {
+            const menu = document.querySelector('.app-holder__sidebar__menu');
+            const toggle = document.querySelector('.toggle-menu');
+            menu.classList.toggle('app-holder__sidebar__menu--open');
+            toggle.innerHTML === 'Menu' ? toggle.innerHTML = 'Close' : toggle.innerHTML = 'Menu';
+        }
+
+    </script>
+</body>
+</html>
