@@ -138,7 +138,7 @@ Layout
 /*--Speechy Widget--*/
 
 .speechy-widget__footer__voice {
-    padding: 4px;
+    padding: 4px 20px 4px 4px;
 }
 
 .speechy-widget__footer__voice p {
