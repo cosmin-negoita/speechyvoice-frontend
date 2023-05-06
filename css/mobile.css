@@ -137,6 +137,14 @@ Layout
 
 /*--Speechy Widget--*/
 
+.speechy-widget__footer__voice {
+    padding: 4px;
+}
+
 .speechy-widget__footer__voice p {
     display: none;
+}
+
+.speechy-widget__lock {
+    padding: 3px 0;
 }

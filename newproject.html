@@ -17,7 +17,7 @@
                     <button class="close btn btn--secondary-dark btn--icon" onclick="toggleOverlay()"><img src="assets/icon-cross.svg" alt="" /></button>
                     <div class="tabs card--white">
                         <button class="tabs__item tabs__item--active txt txt--body">All Voices</button>
-                        <button class="tabs__item txt txt--body">Favorite</button>
+                        <button class="tabs__item txt txt--body">Favorites</button>
                     </div>
                 </div>
                 <div class="overlay__ctnr__content ctnr-grid gap--l cols--thirds">
@@ -212,48 +212,203 @@
                     </div>
                 </div>
                 <div class="ctnr-grid gap--l padl--72">
-                    <div class="speechy-widget">
-                        <div class="card card--white ctnr-grid gap--l pad--l mobile-pad--l">
-                            <p class="speechy-widget__prompt txt txt--body-big" contenteditable="true" placeholder="Type here...">This is pretty amazing!</p>
-                            <div class="speechy-widget__footer ctnr-flex ctnr-flex--between">
-                                <button class="speechy-widget__footer__voice ctnr-flex align-center gap--m" onclick="toggleOverlay()">
-                                    <img class="speechy-widget__footer__voice__thumb" src="assets/alex.jpg" alt="Alex" />
-                                    <p class="txt txt--body">Alex</p>
-                                    <img src="assets/icon-chevron-down.svg" alt="" />
-                                </button>
-                                <div class="ctnr-flex gap--m">
-                                    <button class="btn btn--secondary-dark btn--icon"><img src="assets/icon-download-dark.svg" alt="" /></button>
-                                    <button class="btn btn--icon"><img src="assets/icon-play-white.svg" alt="" /></button>
+                    <div class="speechy-widgets ctnr-grid gap--l">
+                        <div class="speechy-widget" data-locked="off" data-focus="off" tabindex="0">
+                            <div class="card card--white card--white-hover ctnr-grid gap--l pad--l mobile-pad--l">
+                                <div class="speechy-widget__more">
+                                    <img src="assets/icon-more.svg" alt="">
+                                    <div class="card card--white card--white-far padt--m padb--m speechy-widget__more__tooltip tooltip">
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-arrow-up.svg" alt="">
+                                            <p class="txt txt--body">Move up</p>
+                                        </button>
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-arrow-down.svg" alt="">
+                                            <p class="txt txt--body">Move down</p>
+                                        </button>
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-trash-dark.svg" alt="">
+                                            <p class="txt txt--body">Delete</p>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="speechy-widget">
-                        <div class="card card--white ctnr-grid gap--l pad--l mobile-pad--l">
-                            <p class="speechy-widget__prompt txt txt--body-big" contenteditable="true" placeholder="Type here...">This is some text</p>
-                            <div class="speechy-widget__footer ctnr-flex ctnr-flex--between">
-                                <button class="speechy-widget__footer__voice ctnr-flex align-center gap--m" onclick="toggleOverlay()">
-                                    <img class="speechy-widget__footer__voice__thumb" src="assets/alex.jpg" alt="Alex" />
-                                    <p class="txt txt--body">Alex</p>
-                                    <img src="assets/icon-chevron-down.svg" alt="" />
-                                </button>
-                                <div class="ctnr-flex gap--m">
-                                    <button class="btn btn--icon"><img src="assets/icon-gear.svg" alt="" /></button>
+                                <div class="ctnr-grid cols--max-full gap--m">
+                                    <div class="speechy-widget__lock" onclick="toggleBlockLock(this)">
+                                        <div class="speechy-widget__lock__icon"></div>
+                                    </div>
+                                    <p class="speechy-widget__prompt txt txt--body-big" contenteditable="true" placeholder="Type here..." onfocus="onFocus(this)"></p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="speechy-widget">
-                        <div class="card card--white ctnr-grid gap--l pad--l mobile-pad--l">
-                            <p class="speechy-widget__prompt txt txt--body-big" contenteditable="true" placeholder="Type here..."></p>
-                            <div class="speechy-widget__footer ctnr-flex ctnr-flex--between">
-                                <button class="speechy-widget__footer__voice ctnr-flex align-center gap--m" onclick="toggleOverlay()">
-                                    <img class="speechy-widget__footer__voice__thumb" src="assets/alex.jpg" alt="Alex" />
-                                    <p class="txt txt--body">Alex</p>
-                                    <img src="assets/icon-chevron-down.svg" alt="" />
-                                </button>
-                                <div class="ctnr-flex gap--m">
+                                <div class="speechy-widget__footer ctnr-flex ctnr-flex--wrap gap--m">
                                     <button class="btn btn--icon btn--disabled"><img src="assets/icon-gear.svg" alt="" /></button>
+                                    <button class="speechy-widget__footer__voice ctnr-flex align-center gap--m" onclick="toggleOverlay()">
+                                        <img class="speechy-widget__footer__voice__thumb" src="assets/alex.jpg" alt="Alex" />
+                                        <p class="txt txt--body">Alex</p>
+                                    </button>
+                                    <button class="speechy-widget__footer__speed btn btn--secondary-dark txt txt--body">
+                                        <span>Speed</span>
+                                        <div class="tooltip-wrapper tooltip speechy-widget__footer__speed__tooltip">
+                                            <div class="ctnr-grid card card--white card--white-far tooltip pad--l gap--l">
+                                                <p class="txt txt--body-big"><strong>50%</strong></p>
+                                                <div class="slider-ctnr">
+                                                    <div class="slider-ctnr__knob" style="left: calc(75% - 12px)"></div>
+                                                    <div class="slider-ctnr__bar">
+                                                        <div class="slider-ctnr__bar__loaded" style="width: 25%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="speechy-widget__footer__pause btn btn--secondary-dark txt txt--body">Add pause</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speechy-widget" data-locked="off" data-focus="off" tabindex="0">
+                            <div class="card card--white card--white-hover ctnr-grid gap--l pad--l mobile-pad--l">
+                                <div class="speechy-widget__more">
+                                    <img src="assets/icon-more.svg" alt="">
+                                    <div class="card card--white card--white-far padt--m padb--m speechy-widget__more__tooltip tooltip">
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-arrow-up.svg" alt="">
+                                            <p class="txt txt--body">Move up</p>
+                                        </button>
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-arrow-down.svg" alt="">
+                                            <p class="txt txt--body">Move down</p>
+                                        </button>
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-trash-dark.svg" alt="">
+                                            <p class="txt txt--body">Delete</p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ctnr-grid cols--max-full gap--m">
+                                    <div class="speechy-widget__lock" onclick="toggleBlockLock(this)">
+                                        <div class="speechy-widget__lock__icon"></div>
+                                    </div>
+                                    <p class="speechy-widget__prompt txt txt--body-big" contenteditable="true" placeholder="Type here..." onfocus="onFocus(this)">This is pretty amazing!</p>
+                                </div>
+                                <div class="speechy-widget__footer ctnr-flex ctnr-flex--wrap gap--m">
+                                    <button class="btn btn--icon"><img src="assets/icon-gear.svg" alt="" /></button>
+                                    <button class="speechy-widget__footer__voice ctnr-flex align-center gap--m" onclick="toggleOverlay()">
+                                        <img class="speechy-widget__footer__voice__thumb" src="assets/alex.jpg" alt="Alex" />
+                                        <p class="txt txt--body">Alex</p>
+                                    </button>
+                                    <button class="speechy-widget__footer__speed btn btn--secondary-dark txt txt--body">
+                                        <span>Speed</span>
+                                        <div class="tooltip-wrapper tooltip speechy-widget__footer__speed__tooltip">
+                                            <div class="ctnr-grid card card--white card--white-far tooltip pad--l gap--l">
+                                                <p class="txt txt--body-big"><strong>50%</strong></p>
+                                                <div class="slider-ctnr">
+                                                    <div class="slider-ctnr__knob" style="left: calc(75% - 12px)"></div>
+                                                    <div class="slider-ctnr__bar">
+                                                        <div class="slider-ctnr__bar__loaded" style="width: 25%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="speechy-widget__footer__pause btn btn--secondary-dark txt txt--body">Add pause</button>
+                                    <button class="speechy-widget__footer__download btn btn--secondary-dark btn--icon"><img src="assets/icon-download-dark.svg" alt="" /></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speechy-widget" data-locked="off" data-focus="off" tabindex="0">
+                            <div class="card card--white card--white-hover ctnr-grid gap--l pad--l mobile-pad--l">
+                                <div class="speechy-widget__more">
+                                    <img src="assets/icon-more.svg" alt="">
+                                    <div class="card card--white card--white-far padt--m padb--m speechy-widget__more__tooltip tooltip">
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-arrow-up.svg" alt="">
+                                            <p class="txt txt--body">Move up</p>
+                                        </button>
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-arrow-down.svg" alt="">
+                                            <p class="txt txt--body">Move down</p>
+                                        </button>
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-trash-dark.svg" alt="">
+                                            <p class="txt txt--body">Delete</p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ctnr-grid cols--max-full gap--m">
+                                    <div class="speechy-widget__lock" onclick="toggleBlockLock(this)">
+                                        <div class="speechy-widget__lock__icon"></div>
+                                    </div>
+                                    <p class="speechy-widget__prompt txt txt--body-big" contenteditable="true" placeholder="Type here..." onfocus="onFocus(this)">This is pretty amazing!</p>
+                                </div>
+                                <div class="speechy-widget__footer ctnr-flex ctnr-flex--wrap gap--m">
+                                    <button class="btn btn--icon"><img src="assets/icon-play-white.svg" alt="" /></button>
+                                    <button class="speechy-widget__footer__voice ctnr-flex align-center gap--m" onclick="toggleOverlay()">
+                                        <img class="speechy-widget__footer__voice__thumb" src="assets/alex.jpg" alt="Alex" />
+                                        <p class="txt txt--body">Alex</p>
+                                    </button>
+                                    <button class="speechy-widget__footer__speed btn btn--secondary-dark txt txt--body">
+                                        <span>Speed</span>
+                                        <div class="tooltip-wrapper tooltip speechy-widget__footer__speed__tooltip">
+                                            <div class="ctnr-grid card card--white card--white-far tooltip pad--l gap--l">
+                                                <p class="txt txt--body-big"><strong>50%</strong></p>
+                                                <div class="slider-ctnr">
+                                                    <div class="slider-ctnr__knob" style="left: calc(75% - 12px)"></div>
+                                                    <div class="slider-ctnr__bar">
+                                                        <div class="slider-ctnr__bar__loaded" style="width: 25%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="speechy-widget__footer__pause btn btn--secondary-dark txt txt--body">Add pause</button>
+                                    <button class="speechy-widget__footer__download btn btn--secondary-dark btn--icon"><img src="assets/icon-download-dark.svg" alt="" /></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speechy-widget" data-locked="off" data-focus="off" tabindex="0">
+                            <div class="card card--white card--white-hover ctnr-grid gap--l pad--l mobile-pad--l">
+                                <div class="speechy-widget__more">
+                                    <img src="assets/icon-more.svg" alt="">
+                                    <div class="card card--white card--white-far padt--m padb--m speechy-widget__more__tooltip tooltip">
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-arrow-up.svg" alt="">
+                                            <p class="txt txt--body">Move up</p>
+                                        </button>
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-arrow-down.svg" alt="">
+                                            <p class="txt txt--body">Move down</p>
+                                        </button>
+                                        <button class="speechy-widget__more__tooltip__item ctnr-grid cols--max-full gap--m align-center pad--m">
+                                            <img src="assets/icon-trash-dark.svg" alt="">
+                                            <p class="txt txt--body">Delete</p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ctnr-grid cols--max-full gap--m">
+                                    <div class="speechy-widget__lock" onclick="toggleBlockLock(this)">
+                                        <div class="speechy-widget__lock__icon"></div>
+                                    </div>
+                                    <p class="speechy-widget__prompt txt txt--body-big" contenteditable="true" placeholder="Type here..." onfocus="onFocus(this)">This is pretty amazing!</p>
+                                </div>
+                                <div class="speechy-widget__footer ctnr-flex ctnr-flex--wrap gap--m">
+                                    <button class="btn btn--icon"><img src="assets/icon-play-white.svg" alt="" /></button>
+                                    <button class="speechy-widget__footer__voice ctnr-flex align-center gap--m" onclick="toggleOverlay()">
+                                        <img class="speechy-widget__footer__voice__thumb" src="assets/alex.jpg" alt="Alex" />
+                                        <p class="txt txt--body">Alex</p>
+                                    </button>
+                                    <button class="speechy-widget__footer__speed btn btn--secondary-dark txt txt--body">
+                                        <span>Speed</span>
+                                        <div class="tooltip-wrapper tooltip speechy-widget__footer__speed__tooltip">
+                                            <div class="ctnr-grid card card--white card--white-far tooltip pad--l gap--l">
+                                                <p class="txt txt--body-big"><strong>50%</strong></p>
+                                                <div class="slider-ctnr">
+                                                    <div class="slider-ctnr__knob" style="left: calc(75% - 12px)"></div>
+                                                    <div class="slider-ctnr__bar">
+                                                        <div class="slider-ctnr__bar__loaded" style="width: 25%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="speechy-widget__footer__pause btn btn--secondary-dark txt txt--body">Add pause</button>
+                                    <button class="speechy-widget__footer__download btn btn--secondary-dark btn--icon"><img src="assets/icon-download-dark.svg" alt="" /></button>
                                 </div>
                             </div>
                         </div>
@@ -312,6 +467,43 @@
                 }, 250);
             }
         }
+
+        const onFocus = (e) => {
+            document.querySelectorAll('[data-focus="on"]').forEach(e => e.setAttribute('data-focus', 'off'));
+            e.parentElement.parentElement.parentElement.setAttribute('data-focus', 'on');
+        }
+
+        const toggleBlockLock = (e) => {
+            const element = e.parentElement.parentElement.parentElement;
+            if (element.getAttribute('data-locked') === 'on') {
+                element.setAttribute('data-locked', 'off');
+                e.nextElementSibling.setAttribute('contenteditable', true);
+            }
+            else {
+                element.setAttribute('data-locked', 'on');
+                e.nextElementSibling.setAttribute('contenteditable', false);
+                document.querySelectorAll('[data-focus="on"]').forEach(e => e.setAttribute('data-focus', 'off'));
+            }
+        }
+
+        const isDescendant = (parent, child) => {
+            let node = child.parentNode;
+            while (node !== null) {
+                if (node == parent) {
+                    return true;
+                }
+                node = node.parentNode;
+            }
+            return false;
+        }
+
+        // Click outside Speechy Widget
+        document.addEventListener('click', (e) => {
+            const currentFocusedEl = document.querySelector('[data-focus="on"]');
+            if (currentFocusedEl) {
+                if (!isDescendant(currentFocusedEl, e.target)) currentFocusedEl.setAttribute('data-focus', 'off');
+            }
+        });
 
     </script>
 </body>

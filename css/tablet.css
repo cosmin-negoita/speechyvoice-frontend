@@ -114,3 +114,13 @@ Layout
 .contact__ctnr.cols--halves {
     grid-template-columns: 1fr;
 }
+
+/*--Speechy Widget--*/
+
+.speechy-widget__lock {
+    padding: 5px 0;
+}
+
+.speechy-widget__footer__voice {
+    padding: 4px 20px 4px 4px;
+}
