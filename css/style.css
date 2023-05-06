@@ -1146,6 +1146,10 @@ Responsive Styles
         box-shadow: none;
     }
 
+    .cols--halves-break {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media screen and (max-width: 690px) {
