@@ -714,6 +714,10 @@ Styles
     background: url('../assets/icon-lock-dark.svg') no-repeat;
 }
 
+.speechy-widget__prompt {
+    padding-right: 64px;
+}
+
 .speechy-widget[data-locked="on"] .speechy-widget__lock__icon {
     background-image: url('../assets/icon-lock-purple.svg');
 }
@@ -1098,6 +1102,14 @@ Responsive Styles
         width: max-content;
     }
 
+    .cols--max-full-break {
+        grid-template-columns: 1fr;
+    }
+
+    .cols--max-full-break .btn {
+        width: max-content;
+    }
+
 }
 
 @media screen and (max-width: 460px) { 
@@ -1111,10 +1123,6 @@ Responsive Styles
 
     .overlay .close {
         box-shadow: none;
-    }
-
-    .cols--max-full {   
-        grid-template-columns: 1fr;
     }
 
 }
