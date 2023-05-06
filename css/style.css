@@ -718,13 +718,17 @@ Styles
     background-image: url('../assets/icon-lock-purple.svg');
 }
 
-.speechy-widget[data-focus="off"] .speechy-widget__footer__voice,
+.speechy-widget[data-focus="off"] .speechy-widget__footer__voice p,
 .speechy-widget[data-focus="off"] .speechy-widget__footer__speed,
 .speechy-widget[data-focus="off"] .speechy-widget__footer__pause {
     display: none;
 }
 
-.speechy-widget[data-focus="on"] .speechy-widget__footer__voice,
+.speechy-widget[data-focus="off"] .speechy-widget__footer__voice {
+    padding-right: 4px;
+}
+
+.speechy-widget[data-focus="on"] .speechy-widget__footer__voice p,
 .speechy-widget[data-focus="on"] .speechy-widget__footer__speed,
 .speechy-widget[data-focus="on"] .speechy-widget__footer__pause {
     display: inherit;
