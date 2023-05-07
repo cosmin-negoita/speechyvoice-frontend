@@ -154,7 +154,7 @@ Layout
 html, body {
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 .holder {
@@ -688,16 +688,15 @@ Styles
     z-index: 5;
     width: calc(100% - 40px);
     max-width: 280px;
-    transform: translateX(calc(100% + 20px));
     top: var(--su-l);
     right: var(--su-l);
     background: var(--gradient-orange);
     border-radius: 8px;
-    transition: transform 0.5s ease-in;
+    display: none;
 }
 
 .notification--open {
-    transform: translateX(0);
+    display: block;
 }
 
 /*--Speechy Widget--*/
