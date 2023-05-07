@@ -799,7 +799,7 @@ Styles
 }
 
 .tooltip-wrapper {
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .speechy-widget__more__tooltip {
@@ -843,6 +843,11 @@ Styles
 .speechy-widget__footer__speed__tooltip {
     width: 200px;
     left: 0;
+}
+
+.speechy-widget__footer__pause__tooltip, .speechy-widget__footer__speed__tooltip {
+    bottom: unset;
+    top: 100%;
 }
 
 .slider-ctnr {
