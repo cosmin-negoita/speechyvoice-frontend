@@ -317,7 +317,7 @@ Styles
 
 .app-holder__sidebar__menu--open.ctnr-grid {
     transition: max-height 0.5s ease-in;
-    max-height: 600px;
+    max-height: 650px;
 }
 
 .app-holder__sidebar__menu-item {
