@@ -159,6 +159,7 @@ html, body {
 
 .holder {
     width: 100vw;
+    overflow-x: hidden;
 }
 
 .no-scroll { overflow: hidden; }
@@ -785,6 +786,7 @@ Styles
 
 .tooltip {
     position: absolute;
+    z-index: 5;
     bottom: 100%;
     right: 0;
     display: none;
@@ -793,6 +795,7 @@ Styles
 
 .open {
     display: block;
+    z-index: 6;
 }
 
 .tooltip-wrapper {
