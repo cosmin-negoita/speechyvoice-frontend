@@ -832,31 +832,14 @@ Styles
     position: relative;
 }
 
+.speechy-widget__footer__pause__tooltip {
+    width: 200px;
+    right: 0;
+}
+
 .speechy-widget__footer__speed__tooltip {
     width: 200px;
-}
-
-@media screen and (min-width: 401px) {
-
-    .speechy-widget__footer__speed__tooltip {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@media screen and (max-width: 358px) {
-    .speechy-widget__footer__speed__tooltip {
-        width: 200px;
-        left: unset;
-        right: 0;
-    }
-}
-
-@media screen and (max-width: 357px) {
-    .speechy-widget__footer__speed__tooltip {
-        width: 200px;
-        left: 0;
-    }
+    left: 0;
 }
 
 .slider-ctnr {
