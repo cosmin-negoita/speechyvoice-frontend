@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/wyo3zlu.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <title>Studio | SpeechyVoice</title>
 </head>
 <body class="bg-glow--dark">
@@ -388,25 +389,42 @@
         // Click speed
         document.querySelectorAll('.speechy-widget__footer__speed').forEach(item => {
             item.addEventListener('click', () => {
-                item.querySelector('.tooltip').classList.add('open');
+                item.querySelector('.speechy-widget__footer__speed .tooltip').classList.add('open');
+            });
+            document.addEventListener('click', (e) => {
+                const openTooltip = document.querySelector('.speechy-widget__footer__speed .tooltip.open');
+                if (openTooltip) {
+                    if (!isDescendant(item, e.target)) {
+                        openTooltip.classList.remove('open');
+                    }
+                }
             });
         });
 
         // Click pause
         document.querySelectorAll('.speechy-widget__footer__pause').forEach(item => {
             item.addEventListener('click', () => {
-                item.querySelector('.tooltip').classList.add('open');
+                item.querySelector('.speechy-widget__footer__pause .tooltip').classList.add('open');
+            });
+            document.addEventListener('click', (e) => {
+                const openTooltip = document.querySelector('.speechy-widget__footer__pause .tooltip.open');
+                if (openTooltip) {
+                    if (!isDescendant(item, e.target)) {
+                        openTooltip.classList.remove('open');
+                    }
+                }
             });
         });
 
         // Click outside tooltip
-        document.addEventListener('click', (e) => {
-            const openTooltip = document.querySelector('.tooltip.open');
-            if (openTooltip) {
-                if (!isDescendant(openTooltip.parentElement, e.target)) {
-                    openTooltip.classList.remove('open');
+        document.querySelectorAll('.tooltip.open').forEach(openTooltip => {
+            document.addEventListener('click', (e) => {
+                if (openTooltip) {
+                    if (!isDescendant(openTooltip.parentElement, e.target)) {
+                        openTooltip.classList.remove('open');
+                    }
                 }
-            }
+            });
         });
 
         // Simulate notification
